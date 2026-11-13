@@ -1,3 +1,23 @@
+# standa/diseval
+
+PIE-installable wrapper for [mk-j/PHP_diseval_extension](https://github.com/mk-j/PHP_diseval_extension),
+the PHP extension that disables `eval()`.
+
+This fork packages the extension as a Composer `php-ext` package that
+[PIE](https://github.com/php/pie) can install, ships prebuilt binaries via CI, and
+includes the changes proposed upstream:
+
+* [mk-j#7](https://github.com/mk-j/PHP_diseval_extension/pull/7): `zend_compile_string`
+  hook and the `diseval.enabled` switch.
+* [mk-j#8](https://github.com/mk-j/PHP_diseval_extension/pull/8): PIE and CI.
+
+Once upstream merges them and publishes its own package (`mk-j/diseval`), use that
+package instead.
+
+```bash
+pie install standa/diseval
+```
+
 # PHP diseval extension
 
 The purpose of the diseval php extension is to disable `eval()` in php.
@@ -170,7 +190,7 @@ Each GitHub release has prebuilt binaries attached, so no compiler is needed:
 PHP 8.0 is end-of-life, so it gets no prebuilt binaries; PIE builds it from source.
 
 ```bash
-pie install mk-j/diseval
+pie install standa/diseval
 echo "diseval.enabled = 1" >> "$(php -r 'echo PHP_CONFIG_FILE_SCAN_DIR;')/diseval.ini"   # optional, 1 is the default
 ```
 
@@ -182,7 +202,7 @@ attestation for each binary. To check that a zip was built by this repository's
 release workflow:
 
 ```bash
-gh attestation verify php_diseval-<version>_php8.4-x86_64-linux-glibc.zip --repo mk-j/PHP_diseval_extension
+gh attestation verify php_diseval-<version>_php8.4-x86_64-linux-glibc.zip --repo standa/php-diseval
 ```
 
 ## Building
