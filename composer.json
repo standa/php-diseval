@@ -1,9 +1,15 @@
 {
-    "name": "mk-j/diseval",
-    "description": "PHP extension that disables eval() (PIE / Composer installable)",
+    "name": "standa/diseval",
+    "description": "Disables eval() in PHP 8 (PIE-installable wrapper around mk-j/PHP_diseval_extension)",
     "type": "php-ext",
     "license": "MIT",
-    "keywords": ["eval", "security", "php-ext", "pie", "extension"],
+    "keywords": [
+        "eval",
+        "security",
+        "php-ext",
+        "pie",
+        "extension"
+    ],
     "require": {
         "php": "^8.0"
     },
@@ -12,7 +18,13 @@
         "build-path": "source",
         "support-zts": true,
         "support-nts": true,
-        "download-url-method": ["pre-packaged-binary", "composer-default"],
-        "os-families-exclude": ["windows"]
-    }
+        "download-url-method": [
+            "pre-packaged-binary",
+            "composer-default"
+        ],
+        "os-families-exclude": [
+            "windows"
+        ]
+    },
+    "homepage": "https://github.com/standa/php-diseval"
 }

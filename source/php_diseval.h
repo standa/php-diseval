@@ -6,7 +6,7 @@
 extern zend_module_entry diseval_module_entry;
 # define phpext_diseval_ptr &diseval_module_entry
 
-# define PHP_DISEVAL_VERSION "0.3.0"
+# define PHP_DISEVAL_VERSION "0.3.1"
 
 # if defined(ZTS) && defined(COMPILE_DL_DISEVAL)
 ZEND_TSRMLS_CACHE_EXTERN()
